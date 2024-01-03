@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Grilled Beef Steak with Mushroom sauce",
+      "restaurant": "Steak house",
+      "rating": "4.5",
+      "description": "Indulge in the mouthwatering delight of a perfectly grilled beef steak generously topped with a rich and savory mushroom sauce.",
+      "price": "25.27",
+      "image": "/images/Grilled Beef Steak with Mushroom sauce.png"
+    },
+    {
+      "id": 2,
+      "title": "Green salad with mashed potatots",
+      "restaurant": "Fresh Bites",
+      "rating": "4.2",
+      "description": "A refreshing green salad paired with creamy mashed potatoes, creating a perfect blend of flavors and textures.",
+      "price": "12.22",
+      "image": "/images/Green salad with mashed potatots.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Fresh vegetable salad",
+      "restaurant": "Harvest Kitchen",
+      "rating": "4.5",
+      "description": "Enjoy a burst of freshness with our chef's special fresh vegetable salad, featuring a variety of seasonal veggies and a zesty dressing.",
+      "price": "11.22",
+      "image": "/images/Fresh vegetable salad.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Mixed salad with strawberries and watermelon",
+      "restaurant": "Berry Bliss Delight",
+      "rating": "4.7",
+      "description": "Savor the sweetness of mixed salad with the delightful addition of juicy strawberries and crisp watermelon. A perfect summer treat!",
+      "price": "12.44",
+      "image": "/images/Mixed salad with strawberries and watermelon.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Vegan strawberry cake",
+      "restaurant": "Sweet Haven Bakery",
+      "rating": "4.6",
+      "description": "Indulge in the guilt-free pleasure of our Vegan Strawberry Cake - a delicious blend of fresh strawberries and moist cake, topped with vegan frosting.",
+      "price": "10.12",
+      "image": "/images/Vegan strawberry cake.jpeg"
+    }
+  ]
+}

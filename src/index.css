@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-background: 220 67% 96%;
+  --brand-text-primary: 0 0% 0%;
+  --brand-text-secondary: 0 1% 26%;
+  --brand-text-muted: 0 0% 63%;
+
+  --brand-white-primary: 0 0% 100%;
+  --brand-teal-primary: 107 61% 94%;
+  --brand-pink-primary: 344 100% 95%;
+  --brand-orange-primary: 14 81% 51%;
+}
+
+@layer components {
+  .br500 {
+    @apply border-2 border-red-500;
+  }
+}
+
+@keyframes take-off-favorite {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.9);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.favorite-stroke {
+  animation: 300ms add-favorite forwards;
+}
+
+.favorite-filled {
+  animation: 300ms take-off-favorite forwards ease-in-out;
+}
+
+@keyframes add-favorite {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.9);
+    fill: red;
+  }
+  40% {
+    transform: scale(1.1);
+    fill: red;
+  }
+  100% {
+    transform: scale(1);
+    fill: red;
+  }
+}
