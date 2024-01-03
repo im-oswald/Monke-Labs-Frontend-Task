@@ -18,7 +18,7 @@ export default function TopBar() {
 
   return (
     <div>
-      <nav className="flex justify-between items-center px-8 py-10 font-poppins">
+      <nav className="flex justify-between items-center py-10 font-poppins">
         <div>
           <h2 className="text-2xl lg:text-3xl font-bold flex gap-3">
             Hey {User} <HandWaveIcon />

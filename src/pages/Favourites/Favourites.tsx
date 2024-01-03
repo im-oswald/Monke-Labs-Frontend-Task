@@ -3,9 +3,7 @@ import LeftArrowIcon from "../../assets/svgs/LeftArrowIcon";
 import { useEffect, useState } from "react";
 import { getLocalStorageItems } from "../../utils/LocalStorage";
 import useProducts from "../../hooks/useProducts";
-import BottomBar from "../../components/BottomBar";
 import { Product } from "../../types/Product.type";
-import Header from "../../components/Header";
 
 function FavouriteItem({ product }: { product: Product }) {
   const { image, title, restaurant, price } = product;
@@ -47,34 +45,23 @@ export default function Favourites() {
   }, []);
 
   return (
-    <>
-      <main className="font-poppins bg-brand-background min-h-screen">
-        <Header />
-        <div className="max-w-screen-xl mx-auto">
-          <div className="flex-1 pb-32 px-8">
-            <div>
-              <nav className="flex justify-start items-center pt-8 font-poppins relative">
-                <Link to={"/"}>
-                  <LeftArrowIcon />
-                </Link>
+    <div className="flex-1 pb-32">
+      <div>
+        <nav className="flex justify-start items-center pt-8 font-poppins relative">
+          <Link to={"/"}>
+            <LeftArrowIcon />
+          </Link>
 
-                <h1 className="absolute left-1/2 -translate-x-1/2 text-2xl font-semibold">
-                  Favourites
-                </h1>
-              </nav>
-            </div>
-            <div className="flex flex-col gap-4 py-4">
-              {FavouriteItems.map((item, index) => (
-                <FavouriteItem key={index} product={item} />
-              ))}
-            </div>
-          </div>
-
-          <div className="fixed bottom-0 shadow-lg z-40 border-t border-gray-200 w-full bg-brand-background">
-            <BottomBar />
-          </div>
-        </div>
-      </main>
-    </>
+          <h1 className="absolute left-1/2 -translate-x-1/2 text-2xl font-semibold">
+            Favourites
+          </h1>
+        </nav>
+      </div>
+      <div className="flex flex-col gap-4 py-4">
+        {FavouriteItems.map((item, index) => (
+          <FavouriteItem key={index} product={item} />
+        ))}
+      </div>
+    </div>
   );
 }

@@ -6,16 +6,19 @@ import OrderComplete from "../pages/OrderComplete";
 import Checkout from "../pages/Checkout";
 import Cart from "../pages/Cart";
 import Favourites from "../pages/Favourites";
+import Layout from "../components/Layout";
 
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/product/:productId" element={<Product />} />
-      <Route path="/favourites" element={<Favourites />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/order-complete" element={<OrderComplete />} />
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:productId" element={<Product />} />
+        <Route path="/favourites" element={<Favourites />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-complete" element={<OrderComplete />} />
+      </Route>
       {/* Invalid Routes */}
       <Route path={"*"} element={<PageNotFound />} />
     </Routes>

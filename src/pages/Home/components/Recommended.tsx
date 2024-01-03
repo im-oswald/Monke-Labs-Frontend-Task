@@ -62,7 +62,7 @@ export default function Recommended() {
   }
 
   return (
-    <div className="px-8 font-poppins">
+    <>
       <div className="flex justify-between">
         <h3 className="font-medium lg:text-2xl">Recommended Items</h3>
         <span className="text-brand-orange-primary font-medium lg:text-lg">
@@ -83,6 +83,6 @@ export default function Recommended() {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { getLocalStorageItems } from "../../utils/LocalStorage";
 import useProducts from "../../hooks/useProducts";
 import { Product } from "../../types/Product.type";
-import Header from "../../components/Header";
 
 function CartItem({
   image,
@@ -86,48 +85,43 @@ export default function Cart() {
 
   return (
     <>
-      <main className="font-poppins bg-brand-background min-h-screen">
-        <Header />
-        <div className="max-w-screen-xl mx-auto px-8">
-          <div>
-            <nav className="flex justify-start items-center pt-8 font-poppins relative">
-              <Link to={"/"}>
-                <LeftArrowIcon />
-              </Link>
+      <div>
+        <nav className="flex justify-start items-center pt-8 font-poppins relative">
+          <Link to={"/"}>
+            <LeftArrowIcon />
+          </Link>
 
-              <h1 className="absolute left-1/2 -translate-x-1/2 text-2xl font-semibold">
-                Bucket
-              </h1>
-            </nav>
-          </div>
-          <div className="flex flex-col gap-4 py-4">
-            {cartItems.map((item, index) => (
-              <CartItem
-                key={index}
-                image={item.image}
-                price={item.price}
-                title={item.title}
-                quantity={item.quantity}
-              />
-            ))}
-          </div>
-          <div className="py-8 flex justify-between">
-            <div className="font-inter flex flex-col">
-              <span>Price</span>
-              <p className="text-3xl">
-                {totalPrice}
-                <span className="text-brand-orange-primary">$</span>
-              </p>
-            </div>
-            <Link
-              to={"/checkout"}
-              className="inline-flex justify-center items-center rounded-[3.125rem] bg-brand-orange-primary px-5 py-3 text-xl text-brand-white-primary hover:bg-brand-orange-primary/85 focus:outline-none focus:ring"
-            >
-              Pay Now
-            </Link>
-          </div>
+          <h1 className="absolute left-1/2 -translate-x-1/2 text-2xl font-semibold">
+            Bucket
+          </h1>
+        </nav>
+      </div>
+      <div className="flex flex-col gap-4 py-4">
+        {cartItems.map((item, index) => (
+          <CartItem
+            key={index}
+            image={item.image}
+            price={item.price}
+            title={item.title}
+            quantity={item.quantity}
+          />
+        ))}
+      </div>
+      <div className="py-8 flex justify-between">
+        <div className="font-inter flex flex-col">
+          <span>Price</span>
+          <p className="text-3xl">
+            {totalPrice}
+            <span className="text-brand-orange-primary">$</span>
+          </p>
         </div>
-      </main>
+        <Link
+          to={"/checkout"}
+          className="inline-flex justify-center items-center rounded-[3.125rem] bg-brand-orange-primary px-5 py-3 text-xl text-brand-white-primary hover:bg-brand-orange-primary/85 focus:outline-none focus:ring"
+        >
+          Pay Now
+        </Link>
+      </div>
     </>
   );
 }
