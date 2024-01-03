@@ -41,7 +41,11 @@ export default function BottomBar() {
             <LineChartIcon />
           </li>
           <li>
-            <AvatarIcon />
+            <NavLink to={"/profile"}>
+              {({ isActive }) => (
+                <AvatarIcon fill={isActive ? "#EA5323" : "#A1A1A1"} />
+              )}
+            </NavLink>
           </li>
         </ul>
       </nav>

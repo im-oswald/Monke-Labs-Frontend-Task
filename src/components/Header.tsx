@@ -37,7 +37,13 @@ export default function Header() {
             <span className="text-black">Analytics</span>
           </li>
           <li>
-            <span className="text-black">Profile</span>
+            <NavLink to={"/profile"}>
+              {({ isActive }) => (
+                <span className={isActive ? "text-[#EA5323]" : "text-black"}>
+                  Profile
+                </span>
+              )}
+            </NavLink>
           </li>
         </ul>
       </nav>

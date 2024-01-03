@@ -1,7 +1,6 @@
 import HandWaveIcon from "../../../assets/svgs/HandWaveIcon";
 import SearchIcon from "../../../assets/svgs/SearchIcon";
-
-const User = "Danyal";
+import useUser from "../../../hooks/useUser";
 
 function getTimeOfDayMessage() {
   const currentHour = new Date().getHours();
@@ -15,13 +14,14 @@ function getTimeOfDayMessage() {
 
 export default function TopBar() {
   const message = getTimeOfDayMessage();
+  const { user } = useUser();
 
   return (
     <div>
       <nav className="flex justify-between items-center py-10 font-poppins">
         <div>
           <h2 className="text-2xl lg:text-3xl font-bold flex gap-3">
-            Hey {User} <HandWaveIcon />
+            Hey {!!user && user.userName} <HandWaveIcon />
           </h2>
           <p className="text-sm lg:text-lg">{message}</p>
         </div>

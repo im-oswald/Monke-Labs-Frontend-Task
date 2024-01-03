@@ -7,7 +7,6 @@ import PlusCircleIcon from "../../assets/svgs/PlusCircleIcon";
 import MinusCircleIcon from "../../assets/svgs/MinusCircleIcon";
 import { toast } from "sonner";
 import { getLocalStorageItems } from "../../utils/LocalStorage";
-import Header from "../../components/Header";
 
 type LocalCartItem = { id: string; quantity: string };
 
@@ -100,64 +99,61 @@ export default function Product() {
   }
 
   return (
-    <main className="font-poppins bg-brand-background min-h-screen">
-      <Header />
-      <div className="max-w-screen-xl mx-auto lg:px-8">
-        <div className="bg-brand-white-primary rounded-b-[3.125rem] shadow-sm pb-5 lg:pb-8">
-          <TopBar productId={String(productItem.id)} />
-          <div className="px-8 space-y-3">
-            <h2 className="text-3xl font-medium">{productItem.title}</h2>
-            <p className="text-brand-text-muted">{`By ${productItem.restaurant}`}</p>
-            <div className="flex gap-2">
-              <StarIcon />
-              {productItem.rating}
-            </div>
-          </div>
-          <div className="relative flex overflow-clip">
-            <div className="flex-[0.25] flex items-center justify-center">
-              <div className="flex flex-col items-center justify-center gap-4">
-                <button onClick={increase}>
-                  <PlusCircleIcon />
-                </button>
-                <span className="text-xl font-medium">{quantity}</span>
-                <button onClick={decrease}>
-                  <MinusCircleIcon />
-                </button>
-              </div>
-            </div>
-            <div className="py-52 lg:py-72 flex-[0.75]">
-              <div className="rounded-full w-full lg:w-2/3 overflow-clip absolute top-0 right-0 translate-x-1/4 flex justify-center">
-                <img
-                  src={productItem.image}
-                  className="object-cover"
-                  alt="Product"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="px-8">
-            <h3 className="text-lg lg:text-2xl font-semibold">Description</h3>
-            <p className="text-brand-text-muted  lg:text-lg">
-              {productItem.description}
-            </p>
+    <>
+      <div className="bg-brand-white-primary rounded-b-[3.125rem] shadow-sm pb-5 lg:pb-8">
+        <TopBar productId={String(productItem.id)} />
+        <div className="px-8 space-y-3">
+          <h2 className="text-3xl font-medium">{productItem.title}</h2>
+          <p className="text-brand-text-muted">{`By ${productItem.restaurant}`}</p>
+          <div className="flex gap-2">
+            <StarIcon />
+            {productItem.rating}
           </div>
         </div>
-        <div className="p-8 flex justify-between">
-          <div className="font-inter flex flex-col">
-            <span>Price</span>
-            <p className="text-3xl">
-              {(Number(productItem.price) * quantity).toFixed(2)}
-              <span className="text-brand-orange-primary">$</span>
-            </p>
+        <div className="relative flex overflow-clip">
+          <div className="flex-[0.25] flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-4">
+              <button onClick={increase}>
+                <PlusCircleIcon />
+              </button>
+              <span className="text-xl font-medium">{quantity}</span>
+              <button onClick={decrease}>
+                <MinusCircleIcon />
+              </button>
+            </div>
           </div>
-          <button
-            onClick={handleAddtoCart}
-            className=" inline-block rounded-[3.125rem] bg-brand-orange-primary px-5 py-3 text-xl text-brand-white-primary hover:bg-brand-orange-primary/85 focus:outline-none focus:ring"
-          >
-            Add to cart
-          </button>
+          <div className="py-52 lg:py-72 flex-[0.75]">
+            <div className="rounded-full w-full lg:w-2/3 overflow-clip absolute top-0 right-0 translate-x-1/4 flex justify-center">
+              <img
+                src={productItem.image}
+                className="object-cover"
+                alt="Product"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="px-8">
+          <h3 className="text-lg lg:text-2xl font-semibold">Description</h3>
+          <p className="text-brand-text-muted  lg:text-lg">
+            {productItem.description}
+          </p>
         </div>
       </div>
-    </main>
+      <div className="p-8 flex justify-between pb-36 lg:pb-10">
+        <div className="font-inter flex flex-col">
+          <span>Price</span>
+          <p className="text-lg sm:text-3xl">
+            {(Number(productItem.price) * quantity).toFixed(2)}
+            <span className="text-brand-orange-primary">$</span>
+          </p>
+        </div>
+        <button
+          onClick={handleAddtoCart}
+          className=" inline-block rounded-[3.125rem] bg-brand-orange-primary px-3 py-2 md:px-5 md:py-3 md:text-xl text-brand-white-primary hover:bg-brand-orange-primary/85 focus:outline-none focus:ring"
+        >
+          Add to cart
+        </button>
+      </div>
+    </>
   );
 }

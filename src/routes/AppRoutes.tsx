@@ -7,6 +7,7 @@ import Checkout from "../pages/Checkout";
 import Cart from "../pages/Cart";
 import Favourites from "../pages/Favourites";
 import Layout from "../components/Layout";
+import Profile from "../pages/Profile";
 
 export default function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ export default function AppRoutes() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-complete" element={<OrderComplete />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
       {/* Invalid Routes */}
       <Route path={"*"} element={<PageNotFound />} />
